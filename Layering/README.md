@@ -27,7 +27,7 @@ Layer = 整理上の配置
 
 ## 文書構成
 
-- `00_RDL_横断レイヤリング・キット.md` — キット本体。整理軸、多次元化、Hierarchyとの分離、ξ
+- `00_RDL_横断レイヤリング_キット.md` — キット本体。整理軸、多次元化、Hierarchyとの分離、ξ
 - `10_応用例_GameAI_NPC.md` — DNA / Neural / Physical / Experience / Realtime
 - `20_応用例_社会モデル.md` — Geography / History-Culture / Institution / Group / Individual / Realtime
 - `30_応用例_物理・スケールレイヤー.md` — 物理構造の時間安定レイヤーと、理論のScale Layer
