@@ -1,24 +1,104 @@
 # RDL General Modules
 
-**RDL_General_Modules** は、RDL（関係力学言語）の運用において、「小規模だが便利そうなツール」「ちょっとした補助モジュール」「思考のショートカット」などを気軽に配置・ストックしておくための汎用ツールボックス（T2）です。
+**RDL_General_Modules** は、RDLの複数領域で横断的に再利用できる **領域非依存の構造整理・操作モジュール**を置くリポジトリです。
+
+`RDL_Functions` や `RDL_Durability_Modules` と責務を分けます。
+
+```text
+RDL_Functions
+= 外部理論・数理・実装との翻訳 / Function化
+
+RDL_Durability_Modules
+= 維持・変形・遷移・破断の検査
+
+RDL_General_Modules
+= 複数領域で再利用する構造整理・配置・補助操作
+
+RDL_JunkDNA
+= まだModuleとして固定しない未採用・未廃棄断片
+```
+
+Generalは「何でも置く箱」ではありません。
+
+> **Human / Music / GameAI / Enterprise / 物理・社会等の複数領域で、同じ整理・操作形式を再利用できるものを置く。**
 
 ---
 
-## 🧭 位置づけ（RDL Ecosystem）
+## Current Modules
 
-本リポジトリは、T2（モジュール層）の中でも、特に軽量で機動力の高い**遊撃的なツール群**を担います。
+### [Layering](Layering/)
 
-- **`RDL_Functions`** が「外部理論の翻訳・関数化」という重厚なパーサー設計を担うのに対し、
-- **`RDL_Durability_Modules`** が「徹底的な耐久検査」という監査機関を担うのに対し、
-- **`RDL_General_Modules`**（★本リポジトリ） は、日々の記述や分析でパッと取り出して使える**「便利グッズ・小道具」**を置く場所です。
+有限境界 `B`、Purpose、整理軸 `Axis` に応じて、対象を複数のLayerへ整理する汎用モジュール。
 
-## 📂 構成案 (Repository Structure)
+```text
+Layering = f(B, Purpose, Axis)
+```
 
-### 1. Tools (便利ツール・スクリプト)
-- 境界（$B$）設定時の補助関数やチェックリスト
-- 小さな SILN パラメータの計算断片
-- その他、RDL的思考を補助する細かいモジュール
+Layerは対象世界にあらかじめ存在する絶対階層ではなく、現在の用途に対する有限な整理配置です。
 
-### 2. Templates (テンプレート集)
-- 応用層（Human/Music等）で新しい対象を分析する際のフォーマット
-- 思考のメタファー集など
+主な論点：
+
+```text
+Temporal / Stability Layer
+Scale Layer
+Organizational Layer
+Abstraction Layer
+Multi-dimensional Layer Space
+Layering と Hierarchy の分離
+低速拘束と高速沈降
+ΔB後の再Layering
+ξによる実体化防止
+```
+
+応用例：
+
+- GameAI NPC — `DNA / Neural / Physical / Experience / Realtime`
+- 社会モデル — `Geography / History-Culture / Institution / Group / Individual / Realtime`
+- 物理構造 — `Material / Structure / History / Operating State / Realtime Interaction`
+- 物理理論 — Newtonian / relativistic / quantum 等をScale / Validityで整理
+
+Layer Mapが局所的に完成しても、終端閉包とはみなしません。
+
+```text
+Complete_B(Layer Map) = true
+and
+ξ(B) != 0
+```
+
+> **レイヤーは対象を切る道具であって、対象そのものではない。**
+
+---
+
+## Experimental candidates
+
+### `翻訳後の暫定操作案/`
+
+外部手法・旧分類・既存操作をRDL語彙へ一段翻訳した、まだ正式Moduleではない操作候補を保持しています。
+
+現在は主に、
+
+- 多重SILNの比較・配置
+- シミュレーション破断検査
+
+等が残っています。
+
+今後、責務が固まったものは `Layering` のような正式Module、`RDL_Durability_Modules`、`RDL_Functions`、または `RDL_JunkDNA` へ再配置します。
+
+---
+
+## General Module の昇格基準
+
+Generalへ正式Moduleとして置くものは、最低限次を満たすことを目安とします。
+
+1. 特定領域だけに閉じない。
+2. Purpose / B / 入力 / 出力または操作結果を説明できる。
+3. Core primitiveを勝手に再定義しない。
+4. Human / Music / GameAI等、複数領域へ同じ形式で適用可能である。
+5. どの条件で使え、どこで破れるかを記述できる。
+6. 完成した整理結果を終端的真理へ昇格させず、`ξ` を保持する。
+
+---
+
+## 一文圧縮
+
+> **RDL_General_Modules は、RDLの複数応用領域で共通利用できる、領域非依存の構造整理・配置・補助操作を保持する横断Module層である。**
